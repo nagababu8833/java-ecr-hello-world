@@ -86,7 +86,7 @@ Here’s a sample `README.md` file format tailored for documenting steps to push
 
 ## Steps
 
-### 1. Set Up the IAM Role
+### 4. Set Up the IAM Role
 
 1. Go to the **AWS Management Console**.
 2. Navigate to **IAM > Roles** and create a new role:
@@ -98,7 +98,17 @@ Here’s a sample `README.md` file format tailored for documenting steps to push
 
 ---
 
-### 2. Authenticate Docker with AWS ECR
+---
+
+### 5. Create an ECR Repository
+If the ECR repository does not already exist, create it:
+```bash
+aws ecr create-repository --repository-name <repository-name>
+```
+
+---
+
+#. Authenticate Docker with AWS ECR
 Run the following command to authenticate Docker with the ECR registry:
 ```bash
 aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
@@ -106,7 +116,9 @@ aws ecr get-login-password --region <region> | docker login --username AWS --pas
 
 ---
 
-### 3. Build and Tag Your Docker Image
+#. Build and Tag Your Docker Image
+
+
 1. **Build the Docker image**:
    ```bash
    docker build -t <image-name> .
@@ -116,17 +128,9 @@ aws ecr get-login-password --region <region> | docker login --username AWS --pas
    docker tag <image-name>:<tag> <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository-name>:<tag>
    ```
 
----
 
-### 4. Create an ECR Repository
-If the ECR repository does not already exist, create it:
-```bash
-aws ecr create-repository --repository-name <repository-name>
-```
 
----
-
-### 5. Push the Docker Image to ECR
+3. Push the Docker Image to ECR
 Push the image to ECR:
 ```bash
 docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository-name>:<tag>
