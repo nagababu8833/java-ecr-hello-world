@@ -146,29 +146,4 @@ To verify the image is in ECR:
 
 ---
 
-## Example Commands
-Replace `<placeholders>` with appropriate values:
-1. **Build**:
-   ```bash
-   docker build -t java-docker:latest .
-   ```
-2. **Tag**:
-   ```bash
-   docker tag java-docker:latest 123456789012.dkr.ecr.us-east-1.amazonaws.com/java-docker-ecr:latest
-   ```
-3. **Push**:
-   ```bash
-   docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/java-docker-ecr:latest
-   ```
 
----
-
-## Notes
-- Ensure the EC2 instance has the correct IAM role attached.
-- The AWS CLI automatically uses the temporary credentials provided by the IAM role.
-
----
-
-```
-
-You can adjust the placeholders like `<region>`, `<repository-name>`, and `<aws_account_id>` for your specific use case. Let me know if you need further refinements!
