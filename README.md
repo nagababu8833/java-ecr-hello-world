@@ -77,6 +77,39 @@ CMD ["java", "-jar", "app.jar"]
 
 ---
 
+Steps to Push an Image to ECR Using IAM Role
+1. Set Up the IAM Role
+Create the IAM Role:
+
+Go to IAM > Roles in the AWS Management Console.
+Create a new role and choose EC2 as the trusted entity.
+Attach the policy AmazonEC2ContainerRegistryFullAccess or a custom policy with the required permissions:
+json
+Copy code
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:CompleteLayerUpload",
+        "ecr:CreateRepository",
+        "ecr:DescribeRepositories",
+        "ecr:InitiateLayerUpload",
+        "ecr:PutImage",
+        "ecr:UploadLayerPart"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+Attach the IAM Role to the EC2 Instance:
+
+Go to EC2 > Instances in the AWS Management Console.
+Select your instance, choose Actions > Security > Modify IAM Role, and attach the role you just created.
+
+
 ### **Step 4: Build and Tag the Docker Image**
 
 1. Build the Docker image:
