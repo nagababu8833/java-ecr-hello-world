@@ -85,38 +85,7 @@ Here’s a sample `README.md` file format tailored for documenting steps to push
 ```markdown
 # Push Docker Image to AWS ECR Using IAM Role
 
-This document outlines the steps to push a Docker image to AWS Elastic Container Registry (ECR) using an IAM role on an EC2 instance.
 
----
-
-## Prerequisites
-
-- **AWS Account**
-- **EC2 Instance** with:
-  - IAM Role attached
-  - Docker installed
-  - AWS CLI installed
-- **IAM Role** with ECR permissions:
-  ```json
-  {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Action": [
-          "ecr:BatchCheckLayerAvailability",
-          "ecr:CompleteLayerUpload",
-          "ecr:CreateRepository",
-          "ecr:DescribeRepositories",
-          "ecr:InitiateLayerUpload",
-          "ecr:PutImage",
-          "ecr:UploadLayerPart"
-        ],
-        "Resource": "*"
-      }
-    ]
-  }
-  ```
 
 ---
 
