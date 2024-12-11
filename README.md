@@ -82,16 +82,12 @@ Here’s a sample `README.md` file format tailored for documenting steps to push
 
 ---
 
-```markdown
-# Push Docker Image to AWS ECR Using IAM Role
-
-
-
----
+## Push Docker Image to AWS ECR Using IAM Role
 
 ## Steps
 
 ### 1. Set Up the IAM Role
+
 1. Go to the **AWS Management Console**.
 2. Navigate to **IAM > Roles** and create a new role:
    - **Trusted entity**: EC2.
