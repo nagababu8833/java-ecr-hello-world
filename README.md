@@ -69,11 +69,16 @@ CMD ["java", "-jar", "app.jar"]
 ### **Step 3: Build the Application**
 
 1. Compile the Java application:
+
+2. ```
+   sudo apt install maven
+   ``
+   
    ```bash
    mvn clean package
    ```
 
-2. After building, ensure the JAR file `hello-world-1.0-SNAPSHOT.jar` is in the `target` directory.
+3. After building, ensure the JAR file `hello-world-1.0-SNAPSHOT.jar` is in the `target` directory.
 
 ---
 
@@ -121,11 +126,11 @@ aws ecr get-login-password --region <region> | docker login --username AWS --pas
 
 
 1. **Build the Docker image**:
-   ```bash
+   ```
    docker build -t <image-name> .
    ```
 2. **Tag the Docker image for ECR**:
-   ```bash
+   ```
    docker tag <image-name>:<tag> <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository-name>:<tag>
    ```
 
@@ -133,7 +138,7 @@ aws ecr get-login-password --region <region> | docker login --username AWS --pas
 
 3. Push the Docker Image to ECR
 Push the image to ECR:
-```bash
+```
 docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository-name>:<tag>
 ```
 
@@ -143,7 +148,5 @@ To verify the image is in ECR:
 1. Go to the AWS Management Console.
 2. Navigate to **ECR > Repositories > <repository-name>**.
 3. Ensure the image is listed.
-
----
 
 
