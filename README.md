@@ -81,10 +81,7 @@ CMD ["java", "-jar", "app.jar"]
 
 3. After building, ensure the JAR file `hello-world-1.0-SNAPSHOT.jar` is in the `target` directory.
 
-
-
 Here’s a sample `README.md` file format tailored for documenting steps to push a Docker image to AWS ECR using an IAM role:
-
 
 ## Push Docker Image to AWS ECR Using IAM Role
 
@@ -117,13 +114,12 @@ aws ecr create-repository --repository-name <repository-name>
 
 #. Authenticate Docker with AWS ECR
 Run the following command to authenticate Docker with the ECR registry:
+
 ```
 aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
 ```
 
 #. Build and Tag Your Docker Image
-
-
 1. Build the Docker image:
 
    ```
