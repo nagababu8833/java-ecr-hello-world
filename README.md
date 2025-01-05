@@ -46,7 +46,6 @@ Here’s a step-by-step guide to creating a Java "Hello World" application, cont
    </project>
    ```
 
----
 
 ### **Step 2: Create a Dockerfile**
 
