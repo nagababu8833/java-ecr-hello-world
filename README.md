@@ -96,7 +96,7 @@ Here’s a sample `README.md` file format tailored for documenting steps to push
 3. Attach the role to your EC2 instance:
    - Go to **EC2 > Instances**.
    - Select the instance, choose **Actions > Security > Modify IAM Role**, and attach the role.
-4. install aws cli
+
 
   
 
@@ -142,6 +142,7 @@ To verify the image is in ECR:
 1. Go to the AWS Management Console.
 2. Navigate to **ECR > Repositories > <repository-name>**.
 3. Ensure the image is listed.
+4. install aws cli
 
  ```
    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
