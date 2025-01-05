@@ -71,7 +71,7 @@ CMD ["java", "-jar", "app.jar"]
 
 2.  
  
- ```
+   ```
    sudo apt install maven
    ```
    
@@ -102,15 +102,14 @@ Here’s a sample `README.md` file format tailored for documenting steps to push
    sudo apt install unzip
    unzip awscliv2.zip
    sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
-   
   ```
+
 
 ### 5. Create an ECR Repository
 If the ECR repository does not already exist, create it:
 
-```
+
 aws ecr create-repository --repository-name <repository-name>
-```
 
 #. Authenticate Docker with AWS ECR
 Run the following command to authenticate Docker with the ECR registry:
