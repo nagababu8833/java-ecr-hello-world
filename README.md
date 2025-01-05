@@ -76,7 +76,7 @@ CMD ["java", "-jar", "app.jar"]
    sudo apt install maven
    ``
    
-   ```bash
+   ```
    mvn clean package
    ```
 
