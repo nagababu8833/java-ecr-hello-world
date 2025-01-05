@@ -97,7 +97,7 @@ Here’s a sample `README.md` file format tailored for documenting steps to push
    - Go to **EC2 > Instances**.
    - Select the instance, choose **Actions > Security > Modify IAM Role**, and attach the role.
 4. install aws cli
-
+ ```
    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
    sudo apt install unzip
    unzip awscliv2.zip
