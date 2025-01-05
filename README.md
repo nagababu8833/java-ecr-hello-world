@@ -106,13 +106,14 @@ Here’s a sample `README.md` file format tailored for documenting steps to push
 
 ### 5. Create an ECR Repository
 If the ECR repository does not already exist, create it:
-```bash
+
+```
 aws ecr create-repository --repository-name <repository-name>
 ```
 
 #. Authenticate Docker with AWS ECR
 Run the following command to authenticate Docker with the ECR registry:
-```bash
+```
 aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
 ```
 
