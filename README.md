@@ -64,13 +64,15 @@ COPY target/hello-world-1.0-SNAPSHOT.jar app.jar
 CMD ["java", "-jar", "app.jar"]
 ```
 
----
+
 
 ### **Step 3: Build the Application**
 
 1. Compile the Java application:
 
-2. ```
+2.  
+ 
+ ```
    sudo apt install maven
    ``
    
@@ -80,12 +82,10 @@ CMD ["java", "-jar", "app.jar"]
 
 3. After building, ensure the JAR file `hello-world-1.0-SNAPSHOT.jar` is in the `target` directory.
 
----
 
 
 Here’s a sample `README.md` file format tailored for documenting steps to push a Docker image to AWS ECR using an IAM role:
 
----
 
 ## Push Docker Image to AWS ECR Using IAM Role
 
@@ -125,19 +125,22 @@ aws ecr get-login-password --region <region> | docker login --username AWS --pas
 #. Build and Tag Your Docker Image
 
 
-1. **Build the Docker image**:
+1. Build the Docker image:
+
    ```
    docker build -t <image-name> .
    ```
-2. **Tag the Docker image for ECR**:
+
+2. Tag the Docker image for ECR:
+
    ```
    docker tag <image-name>:<tag> <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository-name>:<tag>
    ```
 
 
-
 3. Push the Docker Image to ECR
 Push the image to ECR:
+
 ```
 docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository-name>:<tag>
 ```
