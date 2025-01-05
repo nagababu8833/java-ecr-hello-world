@@ -117,8 +117,6 @@ Run the following command to authenticate Docker with the ECR registry:
 aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
 ```
 
----
-
 #. Build and Tag Your Docker Image
 
 
@@ -139,7 +137,6 @@ Push the image to ECR:
 docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<repository-name>:<tag>
 ```
 
----
 
 ## Verify the Push
 To verify the image is in ECR:
